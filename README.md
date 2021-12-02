@@ -45,4 +45,3 @@ npm run start
 
 - gh-pages
 - googleapis
-- enzyme
