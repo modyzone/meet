@@ -47,7 +47,7 @@
       const resultLink = document.getElementById("authURL");
       // Replace this with your own endpoint
       const getAuthURL =
-        "https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&response_type=code&client_id=852481051105-lbve7amuisiihjr9ae4a4gl9mh1mbpja.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fmodyzone.github.io%2Fmeet%2F&flowName=GeneralOAuthFlow";
+        "https://0usghwgh89.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
       getURLElement.onclick = function () {
         fetch(getAuthURL)
@@ -70,7 +70,7 @@
       const getAccessToken = document.getElementById("getToken");
       const accessTokenElement = document.getElementById("accessToken");
       const getToken =
-        "https://accounts.google.com/o/oauth2/v2/auth/oauthchooseaccount?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcalendar.readonly&response_type=code&client_id=852481051105-lbve7amuisiihjr9ae4a4gl9mh1mbpja.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fmodyzone.github.io%2Fmeet%2F&flowName=GeneralOAuthFlow";
+        "https://0usghwgh89.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url";
 
       getAccessToken.onclick = function () {
         let code = codeValue.value;
