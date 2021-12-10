@@ -29,14 +29,14 @@ describe('<CitySearch /> component', () => {
 
     test('render list of suggestions correctly', () => {
         const locations = extractLocations(mockData);
+        const CitySearchWrapper = shallow(<CitySearch />);
         CitySearchWrapper.setState({ suggestions: locations });
         const suggestions = CitySearchWrapper.state('suggestions');
-        expect(CitySearchWrapper.find('.suggestion li')).toHaveLength(suggestions.length + 1);
-    });
-    for (let i = 0; i < suggestions.length; i +=1) {
-        expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i]);
-    }
-});
+        expect(CitySearchWrapper.find('.suggestions li')).toHaveLength(suggestions.length + 1);
+        for (let i = 0; i < suggestions.length; i += 1) {
+          expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i]);
+        }
+      });
 
 test('suggestion list match the query when changed', () => {
     CitySearchWrapper.setState({ query: "", suggestions: [] });
@@ -57,24 +57,6 @@ test('suggestion list match the query when changed', () => {
           CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
           expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
         });
-        CitySearchWrapper.setState({ query: '', suggestions: [] });
-        CitySearchWrapper.find(".city").simulate("change",
-        {
-            target: { value: "Berlin" },
-        });
-        const query = CitySearchWrapper.state("query");
-        const filteredLocations = locations.filter((location) => {
-            return location.toUpperCase().indexOf(query.toUpperCase()) > -1;
-        });
-        expect(CitySearchWrapper.state("suggestions")).toEqual(filteredLocations);
-   
-        const locations = extractLocations(mockData);
-        CitySearchWrapper.setState({ suggestions: locations });
-        const suggestions = CitySearchWrapper.state('suggestions');
-        expect(CitySearchWrapper.find('.suggestions 1i')).toHaveLength(suggestions.length + 1);
-        for (let i = 0; i < suggestions.length; i += 1) {
-            
-        expect(CitySearchWrapper.find('.suggestions li').at(i).text()).toBe(suggestions[i]);
-        }
+    });
     
   
