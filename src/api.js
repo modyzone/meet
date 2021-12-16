@@ -1,6 +1,7 @@
 import { mockData } from './mock-data';
 import axios from 'axios';
 import './nprogress.css';
+import NProgress from 'nprogress';
 
 const checkToken = async (accessToken) => {
     const result = await fetch(
@@ -46,9 +47,9 @@ const removeQuery = () => {
     }
 };
 const getToken = async (code) => {
-    const encodedCode = encodedURIComponent(code);
+    const encodeCode = encodeURIComponent(code);
     const { access_token } = await fetch(
-        'https://oauth2.googleapis.com/token' + '/' + encodedCode
+        'https://oauth2.googleapis.com/token' + '/' + encodeCode
     )
         .then((res) => {
             return res.json();
