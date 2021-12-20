@@ -7,7 +7,7 @@
     "provider": {
       "name": "aws",
       "runtime": "nodejs12.x",
-      "region": "eu-central-1",
+      "region": "us-east-2",
       "timeout": 60,
       "stage": "dev",
       "environment": {
@@ -180,7 +180,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/auth-server/dev/1638863039589-2021-12-07T07:43:59.589Z/auth-server.zip"
+                "S3Key": "serverless/auth-server/dev/1640023675481-2021-12-20T18:07:55.481Z/auth-server.zip"
               },
               "Handler": "handler.getAuthURL",
               "Runtime": "nodejs12.x",
@@ -206,14 +206,14 @@
               "GetAuthURLLogGroup"
             ]
           },
-          "GetAuthURLLambdaVersionesuRvSxfFE88Wa78dUmEiIUolEkHdLmPsG9QZE60": {
+          "GetAuthURLLambdaVersionQk5iRdUnvS175IbrXNiMh7Mc3PhrSKlrcBwRkzxpsE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetAuthURLLambdaFunction"
               },
-              "CodeSha256": "r2nen+a5+828Kw1xOH+Y4bTgpTMmf82wT6PMimVNRkc="
+              "CodeSha256": "Elam6mR2/5oC9re5nUt8C0YUqjAfUNj5D/GOCAB/J7E="
             }
           },
           "ApiGatewayRestApi": {
@@ -301,7 +301,7 @@
               "GetAuthURLLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1638863032423": {
+          "ApiGatewayDeployment1640023666937": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -363,7 +363,7 @@
           "GetAuthURLLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetAuthURLLambdaVersionesuRvSxfFE88Wa78dUmEiIUolEkHdLmPsG9QZE60"
+              "Ref": "GetAuthURLLambdaVersionQk5iRdUnvS175IbrXNiMh7Mc3PhrSKlrcBwRkzxpsE"
             },
             "Export": {
               "Name": "sls-auth-server-dev-GetAuthURLLambdaFunctionQualifiedArn"
@@ -507,7 +507,7 @@
         "timeout": 60,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GetAuthURLLambdaVersionesuRvSxfFE88Wa78dUmEiIUolEkHdLmPsG9QZE60"
+        "versionLogicalId": "GetAuthURLLambdaVersionQk5iRdUnvS175IbrXNiMh7Mc3PhrSKlrcBwRkzxpsE"
       }
     },
     "configValidationMode": "warn",
@@ -529,7 +529,7 @@
     "artifact": "C:\\Users\\Modyzone\\Documents\\meetups\\meet\\auth-server\\.serverless\\auth-server.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/auth-server/dev/1638863039589-2021-12-07T07:43:59.589Z",
+    "artifactDirectoryName": "serverless/auth-server/dev/1640023675481-2021-12-20T18:07:55.481Z",
     "artifact": "auth-server.zip"
   }
 }

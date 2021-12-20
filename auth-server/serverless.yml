@@ -24,8 +24,8 @@ frameworkVersion: '2'
 
 provider:
   name: aws
-  runtime: nodejs12.x
-  region: eu-central-1
+  runtime:  nodejs12.x
+  region: us-east-2
   timeout: 60 # optional, in seconds, default is 6
   stage: dev
   environment:
