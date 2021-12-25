@@ -4,7 +4,7 @@ import App from '../App';
 import { mockData } from '../mock-data';
 import { shallow } from 'enzyme';
 import CitySearch from '../CitySearch';
-
+import { extractLocations } from '../api';
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { isCompositeComponentWithType } from 'react-dom/cjs/react-dom-test-utils.production.min';
 
@@ -22,7 +22,7 @@ test('When user hasn’t searched for a city, show upcoming events from all citi
 
   });
 
-  then('the user should see the list of all upcoming events', () => {
+  then('the user should see the list of upcoming events.', () => {
     AppWrapper.update();
     expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
   });
@@ -30,11 +30,12 @@ test('When user hasn’t searched for a city, show upcoming events from all citi
 
 test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
   let CitySearchWrapper;
+  let locations = extractLocations(mockData);
   given('the main page is open', () => {
-    CitySearchWrapper = shallow(<CitySearch updateEvents={() => { }} locations={locations} />);
+    CitySearchWrapper = shallow(<CitySearch updateEvents={() => {}} locations={locations} />);
   });
 
-  when('user starts typing in the city textbox', () => {
+  when('the user starts typing in the city textbox', () => {
     CitySearchWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });
   });
 
