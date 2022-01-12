@@ -26,7 +26,7 @@ export const getEvents = async () => {
 
     if (token) {
         removeQuery();
-        const url = 'https://www.googleapis.com/calendar/v3/calendars/calendarId/events' + '/' + token;
+        const url = "https://hvi6h1lh8f.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + '/' + token;
         const result = await axios.get(url);
         if (result.data) {
             var locations = extractLocations(result.data.events);
@@ -54,7 +54,7 @@ const removeQuery = () => {
 const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
     const { access_token } = await fetch(
-        'https://oauth2.googleapis.com/token' + '/' + encodeCode
+        "https://hvi6h1lh8f.execute-api.eu-central-1.amazonaws.com/dev/api/token" + '/' + encodeCode
     )
         .then((res) => {
             return res.json();
@@ -86,7 +86,7 @@ export const getAccessToken = async () => {
         const code = await searchParams.get("code");
         if (!code) {
             const results = await axios.get(
-                "https://0usghwgh89.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
+                "https://hvi6h1lh8f.execute-api.eu-central-1.amazonaws.com/dev/api/get-auth-url"
             );
             const { authUrl } = results.data;
             return (window.location.href = authUrl);
