@@ -5,7 +5,7 @@ class NumberOfEvents extends Component {
 
   state = {
     numberOfEvents: 32,
-    infoText: []
+    infoText: ''
   }
 
   handleInputChanged = (event) => {
@@ -18,7 +18,7 @@ class NumberOfEvents extends Component {
     } else {
       this.setState({
         numberOfEvents: number,
-        infoText: []
+        infoText: ''
       });
       this.props.updateNumberofEvents(number);
     }
