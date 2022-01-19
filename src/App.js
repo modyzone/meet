@@ -21,6 +21,16 @@ class App extends Component {
         this.setState({ events, locations: extractLocations(events) });
       }
     });
+    window.addEventListener('offline', () => {
+      this.setState({
+          warnText: "You're offline. The data you see may not be up to date.",
+      });
+  });
+  window.addEventListener('online', () => {
+      this.setState({
+          warnText: '',
+      });
+  });
   }
   componentWillUnmount() {
     this.mounted = false;
